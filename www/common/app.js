@@ -22,3 +22,23 @@ angular.module('starter', ['ionic', 'ionic-material'])
     }
   });
 })
+
+.config(function($stateProvider, $urlRouterProvider) {
+
+    $stateProvider.state('trips', {
+            url: '/trips',
+            templateUrl: 'modules/trips/views/list.html'
+        })
+
+        //.state('details', {
+        //    url: '/details',
+        //    templateUrl: 'templates/details.html',
+        //    controller: 'DetailsController',
+        //    params: {
+        //        person: null
+        //    }
+        //})
+
+    $urlRouterProvider.otherwise('trips');
+});
+
