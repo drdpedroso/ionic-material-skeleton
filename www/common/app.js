@@ -25,20 +25,21 @@ angular.module('starter', ['ionic', 'ionic-material'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-    $stateProvider.state('trips', {
+    $stateProvider
+        .state('app', {
+            url: '/app',
+            abstract: true,
+            templateUrl: 'common/views/menu.html'
+        })
+        .state('app.trips', {
             url: '/trips',
-            templateUrl: 'modules/trips/views/list.html'
+            views: {
+                'menuContent' :{
+                    templateUrl: 'modules/trips/views/list.html'
+                }
+            }
         })
 
-        //.state('details', {
-        //    url: '/details',
-        //    templateUrl: 'templates/details.html',
-        //    controller: 'DetailsController',
-        //    params: {
-        //        person: null
-        //    }
-        //})
-
-    $urlRouterProvider.otherwise('trips');
+    $urlRouterProvider.otherwise('app/trips');
 });
 
