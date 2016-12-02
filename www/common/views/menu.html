@@ -17,13 +17,23 @@
     </ion-side-menu-content>
 
     <ion-side-menu side="left">
+
         <ion-header-bar class="bar-positive" style="background-color: black">
+
             <h1 class="title">Road Pay</h1>
         </ion-header-bar>
         <ion-content>
+            <div class="profile">
+                <span class="user item item-avatar">
+                  <img ng-src="http://www.jogoson.com.br/imagens/bob-esponja.jpg">
+                  <h2 class="remove-ellipsis">Eduardo Pedroso</h2>
+                  <h3 class="remove-ellipsis">19 981713271</h3>
+                </span>
+            </div>
             <ul class="list animate-rip">
-                <a href="#/event/check-in" class="item" menu-close>Check-in</a>
-                <a href="#/event/attendees" class="item" menu-close>Attendees</a>
+                <div ui-sref="app.profile" class="item" menu-close><i class="material-icons">&#xE7FD;</i>Perfil</div>
+                <div ui-sref="app.trips" class="item" menu-close><i class="material-icons">&#xE558;</i>Viagens</div>
+                <div ui-sref="app.proposals" class="item" menu-close><i class="material-icons">&#xE227;</i>Propostas</div>
             </ul>
         </ion-content>
     </ion-side-menu>
