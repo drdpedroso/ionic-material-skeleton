@@ -34,6 +34,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // Login
         .state('login', {
             url: '/login',
+            controller: 'LoginController',
+            controllerAs: '$ctrl',  
             templateUrl: 'modules/login/views/login.html'
         })
 
@@ -80,6 +82,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/proposals',
             views: {
                 'menuContent' :{
+                    controller: 'ProposalsController',
+                    controllerAs: '$ctrl',
                     templateUrl: 'modules/proposals/views/list.html'
                 }
             }
@@ -88,6 +92,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/proposal',
             views: {
                 'menuContent' :{
+                    controller: 'DetailsProposalController',
+                    controllerAs: '$ctrl',
                     templateUrl: 'modules/proposals/views/details.html'
                 }
             },
@@ -119,6 +125,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/signup',
             views: {
                 'menuContent' :{
+                    controller: 'SignupController',
+                    controllerAs: '$ctrl',
                     templateUrl: 'modules/profile/views/signup.html'
                 }
             }
