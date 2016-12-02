@@ -31,6 +31,13 @@ angular.module('starter', ['ionic', 'ionic-material'])
             abstract: true,
             templateUrl: 'common/views/menu.html'
         })
+        // Login
+        .state('login', {
+            url: '/login',
+            templateUrl: 'modules/login/views/login.html'
+        })
+        
+        // Trips
         .state('app.trips', {
             url: '/trips',
             views: {
@@ -39,6 +46,29 @@ angular.module('starter', ['ionic', 'ionic-material'])
                 }
             }
         })
+        .state('app.trip', {
+            url: '/trip/detail',
+            views: {
+                'menuContent' :{
+                    templateUrl: 'modules/trips/views/details.html'
+                }
+            },
+            params: {
+              trip : null
+            }
+        })
+        .state('app.trip_map', {
+            url: '/trip/map',
+            views: {
+                'menuContent' :{
+                    templateUrl: 'modules/trips/views/map.html'
+                }
+            },
+            params: {
+              trip : null
+            }
+        })
+
 
     $urlRouterProvider.otherwise('app/trips');
 });
